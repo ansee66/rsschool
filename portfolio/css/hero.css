@@ -1,0 +1,15 @@
+.hero {
+  min-height: 820px;
+  padding: 160px 60px;
+
+  background-image: url('../assets/img/header-bg.jpg');
+  background-position: center -90px;
+  background-repeat: no-repeat;
+}
+
+.hero__text {
+  width: 470px;
+  margin: 10px 0 25px 0;
+
+  font-size: 20px;
+}
