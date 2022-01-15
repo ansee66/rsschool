@@ -1,0 +1,14 @@
+.page-header {
+  font-size: 20px;
+  line-height: 50px;
+
+  background: url('../assets/img/header-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center 0;
+}
+
+.page-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

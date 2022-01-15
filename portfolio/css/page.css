@@ -1,0 +1,12 @@
+.page {
+  height: 100%;
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 36px;
+
+  color: white;
+  background-color: black;
+}
