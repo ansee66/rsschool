@@ -1,0 +1,37 @@
+.video {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.video__player {
+  position: relative;
+}
+
+.video__image {
+  display: block;
+  margin: 0 auto;
+}
+
+.video__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 130px;
+  height: 130px;
+  margin-left: -65px;
+  margin-top: -65px;
+
+  border: none;
+
+  cursor: pointer;
+
+  background-color: transparent;
+  background-image: url('../assets/svg/video-button.svg');
+  background-size: 130px 130px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.video__button:hover {
+  background-image: url('../assets/svg/video-button-hover.svg');
+}
