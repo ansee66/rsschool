@@ -1,6 +1,15 @@
 .section-title {
-  width: 50%;
   margin: 0 auto 60px auto;
+
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 40px;
+
+  color: var(--gold);
+}
+
+.section-title--lines {
+  width: 50%;
 
   text-align: center;
 
@@ -12,11 +21,6 @@
 
 .section-title span {
   padding: 0 20px;
-
-  font-family: "Merriweather", serif;
-  font-weight: 700;
-  font-size: 40px;
-  
-  color: var(--gold);
+ 
   background-color: black;
 }

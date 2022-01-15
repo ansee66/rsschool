@@ -1,0 +1,40 @@
+.contacts {
+  height: 700px;
+
+  background-image: url('../assets/img/contacts-bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contacts__inner {
+  width: 450px;
+  margin-right: 0;
+  padding-top: 60px;
+}
+
+.contacts__title {
+  margin-bottom: 40px;
+}
+
+.contacts__input,
+.contacts__textarea {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 3px 20px;
+
+  font: inherit;
+  font-size: 20px;
+  
+  background-color: transparent;
+  border: 2px solid var(--gold);
+}
+
+.contacts__textarea {
+  min-height: 100px;
+}
+
+.contacts__input::placeholder,
+.contacts__textarea::placeholder {
+  color: var(--gold);
+}
