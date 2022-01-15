@@ -1,0 +1,33 @@
+.portfolio {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.portfolio__button-list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+
+	margin: 60px 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+.portfolio__image-list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 25px;
+
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+.portfolio__image-item {
+	max-height: 560px;
+}

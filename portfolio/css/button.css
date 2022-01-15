@@ -17,3 +17,9 @@
 .button:hover {
   color: white;
 }
+
+.button--transparent {
+  color: var(--gold);
+  background-color: transparent;
+  border: 2px solid var(--gold);
+}
