@@ -1,0 +1,22 @@
+.section-title {
+  width: 50%;
+  margin: 0 auto 60px auto;
+
+  text-align: center;
+
+  background-image: linear-gradient(var(--gold), var(--gold));
+  background-size: 100% 2px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section-title span {
+  padding: 0 20px;
+
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 40px;
+  
+  color: var(--gold);
+  background-color: black;
+}
