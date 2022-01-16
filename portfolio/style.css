@@ -1,4 +1,5 @@
 @import url("css/variables.css");
+@import url("css/global.css");
 
 @import url("css/button.css");
 @import url("css/section-title.css");
@@ -12,3 +13,5 @@
 @import url("css/video.css");
 @import url("css/price.css");
 @import url("css/contacts.css");
+@import url("css/page-footer.css");
+@import url("css/social.css");

@@ -1,0 +1,30 @@
+.page-footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.page-footer p {
+  margin: 0;
+
+  font-size: 20px;
+  line-height: 50px;
+}
+
+.page-footer a {
+  text-decoration: none;
+
+  color: white;
+}
+
+.page-footer a:hover {
+  color: var(--gold);
+}
+
+.page-footer__data {
+  display: flex;
+  gap: 20px;
+}

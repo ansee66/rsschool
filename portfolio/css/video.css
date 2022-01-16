@@ -20,18 +20,19 @@
   height: 130px;
   margin-left: -65px;
   margin-top: -65px;
+  padding: 0;
 
   border: none;
 
   cursor: pointer;
 
   background-color: transparent;
-  background-image: url('../assets/svg/video-button.svg');
-  background-size: 130px 130px;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
-.video__button:hover {
-  background-image: url('../assets/svg/video-button-hover.svg');
+.video__button-icon {
+  fill: white;
+}
+
+.video__button-icon:hover {
+  fill: var(--gold);
 }

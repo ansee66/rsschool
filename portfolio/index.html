@@ -13,7 +13,12 @@
 <body class="page">
   <header class="page-header">
     <div class="page-header__inner container">
-      <img class="page-header__logo" src="assets/svg/logo.svg" alt="Logo" width="50" height="50">
+      <a href="#">
+        <svg class="page-header__logo">
+          <use xlink:href="assets/svg/sprite.svg#logo"></use>
+        </svg>
+      </a>
+      <!-- <img class="page-header__logo" src="assets/svg/logo.svg" alt="Logo" width="50" height="50"> -->
       <nav class="main-nav">
         <ul class="main-nav__list">
           <li class="main-nav__item"><a href="#skills">Skills</a></li>
@@ -96,7 +101,11 @@
         </h2>
         <div class="video__player">
           <img class="video__image" src="assets/img/video-player.jpg" alt="Video" width="1400" height="705">
-          <button class="video__button"></button>
+          <button class="video__button">
+            <svg class="video__button-icon" width="130" height="130">
+              <use xlink:href="assets/svg/sprite.svg#video-button"></use>
+            </svg>
+          </button>
         </div>
       </section>
       <section class="price" id="price">
@@ -155,45 +164,53 @@
       </div>
     </section>
   </main>
-
+    
   <footer class="page-footer">
-    <div class="container">
-      <div class="page-footer__inner">
-        <ul class="page-footer__social social">
-          <li class="social__item">
-            <a class="social__link" href="#">
-              <span class="visually-hidden">My Instagram</span>
-                <svg class="social__icon">
-                  <use xlink:href="./assets/svg/sprite.svg#inst-logo"></use>
-                </svg>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link" href="#">
-              <span class="visually-hidden">My Facebook</span>
-              <svg class="social__icon">
-                <use xlink:href="./assets/svg/sprite.svg#fb-logo"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link" href="#">
-              <span class="visually-hidden">My Twitter</span>
-              <svg class="social__icon">
-                <use xlink:href="./assets/svg/sprite.svg#tw-logo"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link" href="#">
-              <span class="visually-hidden">My Pinterest</span>
-              <svg class="social__icon">
-                <use xlink:href="./assets/svg/sprite.svg#pint-logo"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
+    <div class="page-footer__inner container">
+      <div class="page-footer__data">
+        <p>©</p>
+        <p>2022</p>
+        <p>
+          <a href="https://github.com/ansee66">github</a>
+        </p>
       </div>
+      <p>
+        <a href="https://rs.school/js-stage0/">Rolling Scopes School</a>
+      </p>
+      <ul class="page-footer__social social">
+        <li class="social__item">
+          <a class="social__link" href="#">
+            <span class="visually-hidden">My Instagram</span>
+            <svg class="social__icon" width="32" height="32">
+              <use xlink:href="assets/svg/sprite.svg#inst-logo"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="#">
+            <span class="visually-hidden">My Facebook</span>
+            <svg class="social__icon" width="32" height="32">
+              <use xlink:href="assets/svg/sprite.svg#fb-logo"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="#">
+            <span class="visually-hidden">My Twitter</span>
+            <svg class="social__icon" width="32" height="32">
+              <use xlink:href="assets/svg/sprite.svg#tw-logo"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="#">
+            <span class="visually-hidden">My Pinterest</span>
+            <svg class="social__icon" width="32" height="32">
+              <use xlink:href="assets/svg/sprite.svg#pinterest-logo"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
   </footer>
 </body>
