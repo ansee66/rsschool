@@ -29,5 +29,7 @@
 }
 
 .portfolio__image-item {
+	flex-grow: 1;
+	max-width: 450px;
 	max-height: 560px;
 }

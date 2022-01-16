@@ -1,0 +1,28 @@
+.lang {
+  font-weight: 700;
+}
+
+.lang__label {
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.lang__input:hover + .lang__label {
+  opacity: 0.7;
+}
+
+.lang__input:focus + .lang__label {
+  outline: 1px solid white;
+}
+
+.lang__input:active + .lang__label {
+  opacity: 0.4;
+}
+
+.lang__input:checked + .lang__label {
+  color: var(--gold);
+}
+
+.lang__slash {
+  margin: 0 5px;
+}

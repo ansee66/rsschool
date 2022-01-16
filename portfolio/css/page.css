@@ -1,4 +1,8 @@
 .page {
+  scroll-behavior: smooth;
+}
+
+.page__body {
   height: 100%;
   margin: 0;
 
@@ -9,6 +13,8 @@
 
   color: white;
   background-color: black;
+
+  /* scroll-behavior: smooth; */
 }
 
 .page__title {

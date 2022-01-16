@@ -18,13 +18,20 @@
   text-decoration: none;
 
   color: white;
+
+  transition: all 0.5s ease;
 }
 
 .page-footer a:hover {
   color: var(--gold);
 }
 
+.page-footer a:active {
+  opacity: 0.4;
+}
+
 .page-footer__data {
   display: flex;
   gap: 20px;
+  min-width: 186px;
 }

@@ -4,6 +4,7 @@
 
 .main-nav__list {
   display: flex;
+  gap: 30px;
 
   margin: 0;
   padding: 0;
@@ -11,16 +12,18 @@
   list-style: none;
 }
 
-.main-nav__item {
-  margin: 0 15px;
-}
-
 .main-nav__item a {
   text-decoration: none;
 
   color: white;
+
+  transition: all 0.5s ease;
 }
 
 .main-nav__item a:hover {
   color: var(--gold);
+}
+
+.main-nav__item a:active {
+  opacity: 0.4;
 }

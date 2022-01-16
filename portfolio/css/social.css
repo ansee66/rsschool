@@ -10,13 +10,6 @@
   list-style: none;
 }
 
-.social__icon {
-  width: 32px;
+.social__item {
   height: 32px;
-
-  fill: white;
-}
-
-.social__icon:hover {
-  fill: var(--gold);
 }

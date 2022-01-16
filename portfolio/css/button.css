@@ -12,10 +12,16 @@
   border: none;
 
   cursor: pointer;
+
+  transition: all 0.5s ease;
 }
 
 .button:hover {
   color: white;
+}
+
+.button:active {
+  opacity: 0.4;
 }
 
 .button--transparent {

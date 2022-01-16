@@ -8,7 +8,7 @@
 
 .contacts__inner {
   width: 450px;
-  margin-right: 0;
+  margin-left: auto;
   padding-top: 60px;
 }
 
@@ -21,11 +21,12 @@
   box-sizing: border-box;
   width: 100%;
   margin-bottom: 20px;
-  padding: 3px 20px;
+  padding: 3px 18px;
 
   font: inherit;
   font-size: 20px;
   
+  color: white;
   background-color: transparent;
   border: 2px solid var(--gold);
 }

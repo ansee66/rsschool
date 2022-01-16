@@ -28,11 +28,3 @@
 
   background-color: transparent;
 }
-
-.video__button-icon {
-  fill: white;
-}
-
-.video__button-icon:hover {
-  fill: var(--gold);
-}

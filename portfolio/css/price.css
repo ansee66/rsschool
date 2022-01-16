@@ -8,6 +8,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  gap: 25px;
 
   margin: 0;
   padding: 0;
@@ -16,9 +17,10 @@
 }
 
 .price__item {
-  width: 450px;
+  flex-grow: 1;
+  max-width: 450px;
   min-height: 505px;
-  padding: 43px;
+  padding: 40px;
   box-sizing: border-box;
 
   text-align: center;
@@ -29,6 +31,7 @@
 .price__title {
   margin: 0 0 20px 0;
 
+  font-family: "Merriweather", serif;
   font-size: 28px;
   font-weight: 700;
 }
@@ -36,6 +39,7 @@
 .price__sum {
   margin: 20px 0;
 
+  font-family: "Merriweather", serif;
   font-size: 24px;
   font-weight: 700;
 

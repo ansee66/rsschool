@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +8,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <title>Portfolio</title>
 </head>
-<body class="page">
+<body class="page__body">
   <header class="page-header">
     <div class="page-header__inner container">
-      <a href="#">
-        <svg class="page-header__logo">
+      <a class="page-header__logo" href="#">
+        <span class="visually-hidden">Logo</span>
+        <svg class="icon" width="50" height="50">
           <use xlink:href="assets/svg/sprite.svg#logo"></use>
         </svg>
       </a>
-      <!-- <img class="page-header__logo" src="assets/svg/logo.svg" alt="Logo" width="50" height="50"> -->
       <nav class="main-nav">
         <ul class="main-nav__list">
           <li class="main-nav__item"><a href="#skills">Skills</a></li>
@@ -28,7 +29,13 @@
           <li class="main-nav__item"><a href="#contacts">Contacts</a></li>
         </ul>
       </nav>
-      <p class="language">en / ru</p>
+      <div class="page-header__lang lang">
+        <input class="visually-hidden lang__input" type="radio" id="en-lang" name="lang" value="en-lang" checked>        
+        <label class="lang__label" for="en-lang">en</label>
+        <span class="lang__slash">/</span>
+        <input class="visually-hidden lang__input" type="radio" id="ru-lang" name="lang" value="ru-lang">        
+        <label class="lang__label" for="ru-lang">ru</label>
+      </div>
     </div>
   </header>
 
@@ -102,7 +109,8 @@
         <div class="video__player">
           <img class="video__image" src="assets/img/video-player.jpg" alt="Video" width="1400" height="705">
           <button class="video__button">
-            <svg class="video__button-icon" width="130" height="130">
+            <span class="visually-hidden">Play button</span>
+            <svg class="icon" width="130" height="130">
               <use xlink:href="assets/svg/sprite.svg#video-button"></use>
             </svg>
           </button>
@@ -153,14 +161,16 @@
       </section>
     </div>
     <section class="contacts" id="contacts">
-      <div class="contacts__inner container">
-        <h2 class="contacts__title section-title">Contact me</h2>
-        <form action="" class="contacts__form">
-          <input class="contacts__input" type="email" placeholder="E-mail">
-          <input class="contacts__input" type="tel" placeholder="Phone">
-          <textarea class="contacts__textarea" name="message" placeholder="Message"></textarea>
-          <button class="button" type="submit">Send message</button>
-        </form>
+      <div class="container">
+        <div class="contacts__inner">
+          <h2 class="contacts__title section-title">Contact me</h2>
+          <form class="contacts__form">
+            <input class="contacts__input" type="email" placeholder="E-mail">
+            <input class="contacts__input" type="tel" placeholder="Phone">
+            <textarea class="contacts__textarea" name="message" placeholder="Message"></textarea>
+            <button class="button" type="submit">Send message</button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -181,7 +191,7 @@
         <li class="social__item">
           <a class="social__link" href="#">
             <span class="visually-hidden">My Instagram</span>
-            <svg class="social__icon" width="32" height="32">
+            <svg class="icon" width="32" height="32">
               <use xlink:href="assets/svg/sprite.svg#inst-logo"></use>
             </svg>
           </a>
@@ -189,7 +199,7 @@
         <li class="social__item">
           <a class="social__link" href="#">
             <span class="visually-hidden">My Facebook</span>
-            <svg class="social__icon" width="32" height="32">
+            <svg class="icon" width="32" height="32">
               <use xlink:href="assets/svg/sprite.svg#fb-logo"></use>
             </svg>
           </a>
@@ -197,7 +207,7 @@
         <li class="social__item">
           <a class="social__link" href="#">
             <span class="visually-hidden">My Twitter</span>
-            <svg class="social__icon" width="32" height="32">
+            <svg class="icon" width="32" height="32">
               <use xlink:href="assets/svg/sprite.svg#tw-logo"></use>
             </svg>
           </a>
@@ -205,7 +215,7 @@
         <li class="social__item">
           <a class="social__link" href="#">
             <span class="visually-hidden">My Pinterest</span>
-            <svg class="social__icon" width="32" height="32">
+            <svg class="icon" width="32" height="32">
               <use xlink:href="assets/svg/sprite.svg#pinterest-logo"></use>
             </svg>
           </a>
@@ -213,5 +223,6 @@
       </ul>
     </div>
   </footer>
+  <script src="index.js"></script>
 </body>
 </html>
