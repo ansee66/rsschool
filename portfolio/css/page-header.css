@@ -27,4 +27,8 @@
   .page-header {
     background-image: url('../assets/img/header-bg-tablet.jpg');
   }
+
+  .page-header__lang {
+    margin-right: 75px;
+  }
 }
