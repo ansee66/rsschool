@@ -24,3 +24,17 @@
  
   background-color: black;
 }
+
+@media (max-width: 800px) {
+  .section-title {
+    margin-bottom: 70px;
+
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .section-title--lines {
+    width: 100%;
+    max-width: 364px;
+  }
+}

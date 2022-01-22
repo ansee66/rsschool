@@ -1,16 +1,40 @@
 .hero {
   box-sizing: border-box;
   min-height: 820px;
-  padding: 160px 60px;
+  padding: 160px 0;
 
   background-image: url('../assets/img/header-bg.jpg');
   background-position: center -90px;
   background-repeat: no-repeat;
 }
 
+.hero__inner {
+  max-width: 470px;
+  padding-left: 60px;
+}
+
 .hero__text {
-  width: 470px;
   margin: 10px 0 25px 0;
 
   font-size: 20px;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    min-height: 500px;
+    padding: 78px 0;
+
+    background-image: url('../assets/img/header-bg-tablet.jpg');
+  }
+
+  .hero__inner {
+    max-width: 390px;
+    padding-left: 0;
+  }
+
+  .hero__text {
+    margin: 20px 0 60px 0;
+
+    line-height: 24px;
+  }
 }

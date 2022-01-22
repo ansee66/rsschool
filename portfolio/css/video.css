@@ -28,3 +28,16 @@
 
   background-color: transparent;
 }
+
+@media (max-width: 800px) {
+  .video__player {
+    margin-left: -60px;
+    margin-right: -60px;
+  }
+
+  .video__image {
+    min-height: 418px;
+    object-fit: cover;
+    object-position: -5px center;
+  }
+}

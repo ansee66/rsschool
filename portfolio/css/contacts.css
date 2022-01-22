@@ -1,9 +1,10 @@
 .contacts {
-  height: 700px;
+  min-height: 700px;
 
   background-image: url('../assets/img/contacts-bg.jpg');
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .contacts__inner {
@@ -27,7 +28,7 @@
   font-size: 20px;
   
   color: white;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
   border: 2px solid var(--gold);
 }
 
@@ -38,4 +39,23 @@
 .contacts__input::placeholder,
 .contacts__textarea::placeholder {
   color: var(--gold);
+}
+
+@media (max-width: 800px) {
+  .contacts {
+    min-height: 600px;
+  }
+
+  .contacts__inner {
+    margin-right: auto;
+  }
+
+  .contacts__title {
+    line-height: 2;
+    text-align: center;
+  }
+
+  .contacts__button {
+    margin: 0 auto;
+  }
 }

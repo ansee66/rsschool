@@ -22,3 +22,9 @@
 .page-header__lang {
   margin-left: 31px;
 }
+
+@media (max-width: 800px) {
+  .page-header {
+    background-image: url('../assets/img/header-bg-tablet.jpg');
+  }
+}
