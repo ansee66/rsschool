@@ -25,10 +25,17 @@
 
 @media (max-width: 800px) {
   .page-header {
-    background-image: url('../assets/img/header-bg-tablet.jpg');
+    overflow-x: hidden;
   }
 
   .page-header__lang {
     margin-right: 75px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    background-image: url('../assets/img/header-bg-tablet.jpg');
+    background-position: right 0;
   }
 }

@@ -23,8 +23,6 @@
   .hero {
     min-height: 500px;
     padding: 78px 0;
-
-    background-image: url('../assets/img/header-bg-tablet.jpg');
   }
 
   .hero__inner {
@@ -36,5 +34,12 @@
     margin: 20px 0 60px 0;
 
     line-height: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-image: url('../assets/img/header-bg-tablet.jpg');
+    background-position: right -90px;
   }
 }

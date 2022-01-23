@@ -65,6 +65,7 @@
   }
   
   .skills__list {
+    justify-content: center;
     margin-bottom: 40px;
   }
 

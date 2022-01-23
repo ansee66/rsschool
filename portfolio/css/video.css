@@ -40,4 +40,20 @@
     object-fit: cover;
     object-position: -5px center;
   }
+
+  .video__button-icon {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+@media (max-width: 500px) {
+  .video__player {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .video__image {
+    object-position: -100px center;
+  }
 }

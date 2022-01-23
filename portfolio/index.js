@@ -12,11 +12,11 @@ const navToggle = document.querySelector(".main-nav__toggle");
 const navLinks = document.querySelectorAll(".main-nav__item");
 
 navToggle.addEventListener("click", function() {
-  nav.classList.toggle("open");
+  nav.classList.toggle("main-nav--open");
 });
 
 for (item of navLinks) {
   item.addEventListener("click", function() {
-    nav.classList.remove("open");
+    nav.classList.remove("main-nav--open");
   })
 }
