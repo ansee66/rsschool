@@ -26,3 +26,9 @@
 .lang__slash {
   margin: 0 5px;
 }
+
+@media (max-width: 800px) {
+  .lang__slash {
+    margin: 0 10px;
+  }
+}

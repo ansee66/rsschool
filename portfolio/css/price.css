@@ -5,10 +5,10 @@
 
 .price__list {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 50px 25px;
 
   margin: 0;
   padding: 0;
@@ -19,6 +19,7 @@
 .price__item {
   flex-grow: 1;
   max-width: 450px;
+  min-width: 420px;
   min-height: 505px;
   padding: 40px;
   box-sizing: border-box;
@@ -56,4 +57,20 @@
 
 .price__button {
   margin: 40px auto 0 auto;
+}
+
+@media (max-width: 800px) {
+  .price {
+    padding-bottom: 80px;
+  }
+  
+  .price__item {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 500px) {
+  .price__item {
+    min-width: 0;
+  }
 }

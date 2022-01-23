@@ -27,3 +27,133 @@
 .main-nav__item a:active {
   opacity: 0.4;
 }
+
+.main-nav__toggle {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .main-nav__list {
+    flex-direction: column;
+    gap: 16px;
+
+    position: fixed;
+    width: 620px;
+    height: 100%;
+    right: -900px;
+    top: 0;
+    box-sizing: border-box;
+    padding: 134px 343px 20px 127px;
+
+    background-color: #000000;
+
+    z-index: 3;
+
+    transition: 0.5s
+  }
+
+  .main-nav--open .main-nav__list {
+    right: 0;
+  }
+  
+  .main-nav__item {
+    font-size: 35px;
+    line-height: 73px;
+  }
+
+  .main-nav__toggle {
+    display: block;
+    position: absolute;
+    top: 31px;
+    right: 64px;
+    z-index: 4;
+    display: block;
+    width: 50px;
+    height: 50px;
+  
+    background-color: transparent;
+  
+    cursor: pointer;
+    border: none;
+  }
+
+  .main-nav__toggle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: white;
+    box-shadow: 0 12.5px 0 0 white, 0 25px 0 0 white;
+  }
+
+  .main-nav__toggle::before,
+  .main-nav__toggle::after {
+    transition: 0.5s;
+  }
+
+  .main-nav--open .main-nav__toggle {
+    position: fixed;
+    top: 45px;
+    right: 69px;
+  }
+
+  .main-nav--open .main-nav__toggle::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: white;
+
+    transform: rotate(-45deg);
+  }
+  
+  .main-nav--open .main-nav__toggle::before {
+    width: 60px;
+    height: 2px;
+    transform: rotate(45deg);
+
+    box-shadow: none;
+  }
+
+  .main-nav__overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+  }
+
+  .main-nav--open + .main-nav__overlay {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (max-width: 620px) {
+  .main-nav__list {
+    width: 100%;
+    max-width: 100%;
+    padding: 100px 60px;
+  }
+
+  .main-nav--open .main-nav__list {
+    right: 0;
+  }
+
+  .main-nav__item {
+    font-size: 24px;
+    line-height: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .main-nav__toggle {
+    right: 24px;
+  }
+}

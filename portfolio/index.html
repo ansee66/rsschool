@@ -21,6 +21,9 @@
         </svg>
       </a>
       <nav class="main-nav">
+        <button class="main-nav__toggle" type="button">
+          <span class="visually-hidden">Открыть меню</span>
+        </button>
         <ul class="main-nav__list">
           <li class="main-nav__item"><a href="#skills">Skills</a></li>
           <li class="main-nav__item"><a href="#portfolio">Portfolio</a></li>
@@ -29,6 +32,7 @@
           <li class="main-nav__item"><a href="#contacts">Contacts</a></li>
         </ul>
       </nav>
+      <div class="main-nav__overlay"></div>
       <div class="page-header__lang lang">
         <input class="visually-hidden lang__input" type="radio" id="en-lang" name="lang" value="en-lang" checked>        
         <label class="lang__label" for="en-lang">en</label>
@@ -42,9 +46,11 @@
   <main>
     <section class="hero">
       <div class="container">
-        <h1 class="page__title">Alexa Rise</h1>
-        <p class="hero__text">Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise</p>
-        <button class="button">Hire me</button>
+        <div class="hero__inner">
+          <h1 class="page__title">Alexa Rise</h1>
+          <p class="hero__text">Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise</p>
+          <button class="button">Hire me</button>
+        </div>
       </div>
     </section>
     <div class="container">
@@ -109,8 +115,8 @@
         <div class="video__player">
           <img class="video__image" src="assets/img/video-player.jpg" alt="Video" width="1400" height="705">
           <button class="video__button">
-            <span class="visually-hidden">Play button</span>
-            <svg class="icon" width="130" height="130">
+            <span class="visually-hidden">Play</span>
+            <svg class="icon video__button-icon" width="130" height="130">
               <use xlink:href="assets/svg/sprite.svg#video-button"></use>
             </svg>
           </button>
@@ -168,7 +174,7 @@
             <input class="contacts__input" type="email" placeholder="E-mail">
             <input class="contacts__input" type="tel" placeholder="Phone">
             <textarea class="contacts__textarea" name="message" placeholder="Message"></textarea>
-            <button class="button" type="submit">Send message</button>
+            <button class="contacts__button button" type="submit">Send message</button>
           </form>
         </div>
       </div>
