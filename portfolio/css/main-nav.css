@@ -135,7 +135,7 @@
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 620px) {
   .main-nav__list {
     width: 100%;
     max-width: 100%;
