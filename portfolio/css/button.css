@@ -29,3 +29,9 @@
   background-color: transparent;
   border: 2px solid var(--gold);
 }
+
+.button--transparent.active {
+  color: black;
+  background-color: var(--gold);
+  border: none;
+}

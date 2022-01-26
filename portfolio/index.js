@@ -4,6 +4,7 @@ console.log(
   "22 из 22 - На ширине экрана 768рх и меньше реализовано адаптивное меню"
 )
 
+// адаптивное меню
 const nav = document.querySelector(".main-nav");
 const navToggle = document.querySelector(".main-nav__toggle");
 const navLinks = document.querySelectorAll(".main-nav__item");
@@ -16,4 +17,33 @@ for (item of navLinks) {
   item.addEventListener("click", function() {
     nav.classList.remove("main-nav--open");
   })
+}
+
+// смена изображений в блоке Портфолио при нажатии на кнопки
+const portfolioButtonList = document.querySelector(".portfolio__button-list");
+const portfolioButtons = document.querySelectorAll(".portfolio__button-list .button");
+const portfolioImages = document.querySelectorAll(".portfolio__image-item img");
+
+portfolioButtonList.addEventListener("click", function changeImage(event) {
+  if(event.target.classList.contains("button")) {
+    let season = event.target.dataset.season;
+    portfolioImages.forEach((img, index) => img.src = `/assets/img/${season}/${index + 1}.jpg`);
+    portfolioButtons.forEach((button) => button.classList.remove("active"));
+    changeClassActive(event.target);
+  }
+});
+
+// Кеширование изображений
+const seasons = ["winter", "spring", "summer", "autumn"];
+
+seasons.forEach(function preloadImages(season) {
+  for (let i = 1; i <= 6; i++) {
+    const img = new Image();
+    img.src = `./assets/img/${season}/${i}.jpg`;
+  }
+});
+
+//  Добавление класса active элементу, на котором произошло событие
+function changeClassActive(element) {
+  element.classList.add("active");
 }
