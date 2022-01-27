@@ -1,8 +1,10 @@
+import i18Obj from "./js/translate.js";
+
 console.log(
   "48 из 48 - Вёрстка соответствует макету" + "\n" +
   "15 из 15 - Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется" + "\n" +
   "22 из 22 - На ширине экрана 768рх и меньше реализовано адаптивное меню"
-)
+);
 
 // адаптивное меню
 const nav = document.querySelector(".main-nav");
@@ -13,7 +15,7 @@ navToggle.addEventListener("click", function() {
   nav.classList.toggle("main-nav--open");
 });
 
-for (item of navLinks) {
+for (let item of navLinks) {
   item.addEventListener("click", function() {
     nav.classList.remove("main-nav--open");
   })
@@ -25,11 +27,11 @@ const portfolioButtons = document.querySelectorAll(".portfolio__button-list .but
 const portfolioImages = document.querySelectorAll(".portfolio__image-item img");
 
 portfolioButtonList.addEventListener("click", function changeImage(event) {
-  if(event.target.classList.contains("button")) {
+  if (event.target.classList.contains("button")) {
     let season = event.target.dataset.season;
     portfolioImages.forEach((img, index) => img.src = `/assets/img/${season}/${index + 1}.jpg`);
-    portfolioButtons.forEach((button) => button.classList.remove("active"));
-    changeClassActive(event.target);
+    portfolioButtons.forEach((button) => button.classList.add("button--transparent"));
+    event.target.classList.remove("button--transparent");
   }
 });
 
@@ -43,7 +45,19 @@ seasons.forEach(function preloadImages(season) {
   }
 });
 
-//  Добавление класса active элементу, на котором произошло событие
-function changeClassActive(element) {
-  element.classList.add("active");
-}
+//  Перевод страницы на ru/en 
+const langButtons = document.querySelector(".lang");
+
+langButtons.addEventListener("click", function getTranslate(event) {
+  if (event.target.classList.contains("lang__label")) {
+    const textItems = document.querySelectorAll("[data-i18]");
+    textItems.forEach(function (textItem) {
+      let text = i18Obj[event.target.htmlFor][textItem.dataset.i18];
+      if (textItem.placeholder) {
+        textItem.placeholder = text;
+      } else {
+        textItem.textContent = text;
+      }
+    })
+  }
+});

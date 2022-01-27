@@ -22,23 +22,23 @@
       </a>
       <nav class="main-nav">
         <button class="main-nav__toggle" type="button">
-          <span class="visually-hidden">Открыть меню</span>
+          <span class="visually-hidden">Open menu</span>
         </button>
         <ul class="main-nav__list">
-          <li class="main-nav__item"><a href="#skills">Skills</a></li>
-          <li class="main-nav__item"><a href="#portfolio">Portfolio</a></li>
-          <li class="main-nav__item"><a href="#video">Video</a></li>
-          <li class="main-nav__item"><a href="#price">Price</a></li>
-          <li class="main-nav__item"><a href="#contacts">Contacts</a></li>
+          <li class="main-nav__item" data-i18="skills"><a href="#skills">Skills</a></li>
+          <li class="main-nav__item" data-i18="portfolio"><a href="#portfolio">Portfolio</a></li>
+          <li class="main-nav__item" data-i18="video"><a href="#video">Video</a></li>
+          <li class="main-nav__item" data-i18="price"><a href="#price">Price</a></li>
+          <li class="main-nav__item" data-i18="contacts"><a href="#contacts">Contacts</a></li>
         </ul>
       </nav>
       <div class="main-nav__overlay"></div>
       <div class="page-header__lang lang">
-        <input class="visually-hidden lang__input" type="radio" id="en-lang" name="lang" value="en-lang" checked>        
-        <label class="lang__label" for="en-lang">en</label>
+        <input class="visually-hidden lang__input" type="radio" id="en" name="lang" value="en-lang" checked>        
+        <label class="lang__label" for="en">en</label>
         <span class="lang__slash">/</span>
-        <input class="visually-hidden lang__input" type="radio" id="ru-lang" name="lang" value="ru-lang">        
-        <label class="lang__label" for="ru-lang">ru</label>
+        <input class="visually-hidden lang__input" type="radio" id="ru" name="lang" value="ru-lang">        
+        <label class="lang__label" for="ru" data-lang="ru">ru</label>
       </div>
     </div>
   </header>
@@ -47,45 +47,45 @@
     <section class="hero">
       <div class="container">
         <div class="hero__inner">
-          <h1 class="page__title">Alexa Rise</h1>
-          <p class="hero__text">Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise</p>
-          <button class="button">Hire me</button>
+          <h1 class="page__title" data-i18="hero-title">Alexa Rise</h1>
+          <p class="hero__text" data-i18="hero-text">Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise</p>
+          <button class="button" data-i18="hire">Hire me</button>
         </div>
       </div>
     </section>
     <div class="container">
       <section class="skills" id="skills">
           <h2 class="section-title section-title--lines">
-            <span>Skills</span>
+            <span data-i18="skills">Skills</span>
           </h2>
         <ul class="skills__list">
           <li class="skills__item">
-            <h3 class="skills__title">Digital photography</h3>
-            <p class="skills__description">High-quality photos in the studio and on the nature</p>
+            <h3 class="skills__title" data-i18="skill-title-1">Digital photography</h3>
+            <p class="skills__description" data-i18="skill-text-1">High-quality photos in the studio and on the nature</p>
           </li>
           <li class="skills__item">
-            <h3 class="skills__title">Video shooting</h3>
-            <p class="skills__description">Capture your moments so that they always stay with you</p>
+            <h3 class="skills__title" data-i18="skill-title-2">Video shooting</h3>
+            <p class="skills__description" data-i18="skill-text-2">Capture your moments so that they always stay with you</p>
           </li>
           <li class="skills__item">
-            <h3 class="skills__title">Retouch</h3>
-            <p class="skills__description">I strive to make photography surpass reality</p>
+            <h3 class="skills__title" data-i18="skill-title-3">Retouch</h3>
+            <p class="skills__description" data-i18="skill-text-3">I strive to make photography surpass reality</p>
           </li>
           <li class="skills__item">
-            <h3 class="skills__title">Audio</h3>
-            <p class="skills__description">Professional sounds recording for video, advertising, portfolio</p>
+            <h3 class="skills__title" data-i18="skill-title-4">Audio</h3>
+            <p class="skills__description" data-i18="skill-text-4">Professional sounds recording for video, advertising, portfolio</p>
           </li>
         </ul>
       </section>
       <section class="portfolio" id="portfolio">
         <h2 class="section-title section-title--lines">
-          <span>Portfolio</span>
+          <span data-i18="portfolio">Portfolio</span>
         </h2>
         <ul class="portfolio__button-list">
-          <li class="portfolio__button-item"><button class="button button--transparent" data-season="winter">Winter</button></li>
-          <li class="portfolio__button-item"><button class="button button--transparent" data-season="spring">Spring</button></li>
-          <li class="portfolio__button-item"><button class="button button--transparent" data-season="summer">Summer</button></li>
-          <li class="portfolio__button-item"><button class="button button--transparent active" data-season="autumn">Autumn</button></li>
+          <li class="portfolio__button-item"><button class="button button--transparent" data-season="winter"  data-i18="winter">Winter</button></li>
+          <li class="portfolio__button-item"><button class="button button--transparent" data-season="spring" data-i18="spring">Spring</button></li>
+          <li class="portfolio__button-item"><button class="button button--transparent" data-season="summer" data-i18="summer">Summer</button></li>
+          <li class="portfolio__button-item"><button class="button" data-season="autumn" data-i18="autumn">Autumn</button></li>
         </ul>
         <ul class="portfolio__image-list">
           <li class="portfolio__image-item">
@@ -110,7 +110,7 @@
       </section>
       <section class="video" id="video">
         <h2 class="section-title section-title--lines">
-          <span>Video</span>
+          <span data-i18="video">Video</span>
         </h2>
         <div class="video__player">
           <img class="video__image" src="assets/img/video-player.jpg" alt="Video" width="1400" height="705">
@@ -124,44 +124,44 @@
       </section>
       <section class="price" id="price">
         <h2 class="section-title section-title--lines">
-          <span>Price</span>
+          <span data-i18="price">Price</span>
         </h2>
         <ul class="price__list">
           <li class="price__item">
             <h3 class="price__title">Standard</h3>
             <p class="price__sum">500 $</p>
             <p class="price__description">
-              <span>One location</span>
-              <span>120 photos in color</span>
-              <span>12 photos in retouch</span>
-              <span>Readiness 2-3 weeks</span>
-              <span>Make up, visage</span>
+              <span data-i18="price-description-1-span-1">One location</span>
+              <span data-i18="price-description-1-span-2">120 photos in color</span>
+              <span data-i18="price-description-1-span-3">12 photos in retouch</span>
+              <span data-i18="price-description-1-span-4">Readiness 2-3 weeks</span>
+              <span data-i18="price-description-1-span-5">Make up, visage</span>
             </p>
-            <button class="price__button button">Order shooting</button>
+            <button class="price__button button" data-i18="order">Order shooting</button>
           </li>
           <li class="price__item">
             <h3 class="price__title">Premium</h3>
             <p class="price__sum">700 $</p>
             <p class="price__description">
-              <span>One or two locations</span>
-              <span>200 photos in color</span>
-              <span>20 photos in retouch</span>
-              <span>Readiness 1-2 weeks</span>
-              <span>Make up, visage</span>
+              <span data-i18="price-description-2-span-1">One or two locations</span>
+              <span data-i18="price-description-2-span-2">200 photos in color</span>
+              <span data-i18="price-description-2-span-3">20 photos in retouch</span>
+              <span data-i18="price-description-2-span-4">Readiness 1-2 weeks</span>
+              <span data-i18="price-description-2-span-5">Make up, visage</span>
             </p>
-            <button class="price__button button">Order shooting</button>
+            <button class="price__button button" data-i18="order">Order shooting</button>
           </li>
           <li class="price__item">
             <h3 class="price__title">Gold</h3>
             <p class="price__sum">1000 $</p>
             <p class="price__description">
-              <span>Three locations or more</span>
-              <span>300 photos in color</span>
-              <span>50 photos in retouch</span>
-              <span>Readiness 1 week</span>
-              <span>Make up, visage, hairstyle</span>
+              <span data-i18="price-description-3-span-1">Three locations or more</span>
+              <span data-i18="price-description-3-span-2">300 photos in color</span>
+              <span data-i18="price-description-3-span-3">50 photos in retouch</span>
+              <span data-i18="price-description-3-span-4">Readiness 1 week</span>
+              <span data-i18="price-description-3-span-5">Make up, visage, hairstyle</span>
             </p>
-            <button class="price__button button">Order shooting</button>
+            <button class="price__button button" data-i18="order">Order shooting</button>
           </li>
         </ul>
       </section>
@@ -169,12 +169,12 @@
     <section class="contacts" id="contacts">
       <div class="container">
         <div class="contacts__inner">
-          <h2 class="contacts__title section-title">Contact me</h2>
+          <h2 class="contacts__title section-title" data-i18="contact-me">Contact me</h2>
           <form class="contacts__form">
             <input class="contacts__input" type="email" placeholder="E-mail">
-            <input class="contacts__input" type="tel" placeholder="Phone">
-            <textarea class="contacts__textarea" name="message" placeholder="Message"></textarea>
-            <button class="contacts__button button" type="submit">Send message</button>
+            <input class="contacts__input" type="tel" placeholder="Phone" data-i18="phone">
+            <textarea class="contacts__textarea" name="message" placeholder="Message" data-i18="message"></textarea>
+            <button class="contacts__button button" type="submit" data-i18="send-message">Send message</button>
           </form>
         </div>
       </div>
@@ -229,6 +229,6 @@
       </ul>
     </div>
   </footer>
-  <script src="index.js"></script>
+  <script type="module" src="index.js"></script>
 </body>
 </html>
