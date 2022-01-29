@@ -61,3 +61,25 @@ langButtons.addEventListener("click", function getTranslate(event) {
     })
   }
 });
+
+//  Переключение светлой и тёмной темы
+const themeToggle = document.querySelector(".page-header__theme-toggle");
+const themeToggleIcon = document.querySelector(".page-header__theme-toggle svg");
+const themeArr = [
+  ".page__body",
+  ".page__content",
+  ".section-title--lines",
+  ".portfolio__button-item",
+  ".main-nav__list",
+];
+
+themeToggle.addEventListener("click", function changeTheme() {
+  if (! (document.querySelector(themeArr[0]).classList.contains("light-theme"))) {
+    themeToggleIcon.innerHTML = '<use href="assets/svg/sprite.svg#moon"></use>';
+  } else {
+    themeToggleIcon.innerHTML = '<use href="assets/svg/sprite.svg#sun"></use>';
+  }
+  themeArr.forEach(function (item) {
+    document.querySelectorAll(item).forEach((element) => element.classList.toggle("light-theme"));
+  })
+});
