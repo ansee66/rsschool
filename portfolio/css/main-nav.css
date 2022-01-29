@@ -53,8 +53,15 @@
   }
 
   .main-nav__list.light-theme {
-    color: black;
     background-color: white;
+  }
+
+  .main-nav__list.light-theme a {
+    color: black;
+  }
+
+  .main-nav__list.light-theme a:hover {
+    color: var(--gold);
   }
 
   .main-nav--open .main-nav__list {
@@ -131,6 +138,16 @@
     transform: rotate(45deg);
 
     box-shadow: none;
+  }
+
+  .main-nav--open .main-nav__toggle.light-theme::after,
+  .main-nav--open .main-nav__toggle.light-theme::before {
+    background-color: black;
+  }
+
+  .main-nav--open .main-nav__toggle.light-theme:hover::after,
+  .main-nav--open .main-nav__toggle.light-theme:hover::before {
+    background-color: var(--gold);
   }
 
   .main-nav__overlay {
