@@ -72,5 +72,6 @@
 @media (max-width: 500px) {
   .price__item {
     min-width: 0;
+    padding: 40px 5px;
   }
 }

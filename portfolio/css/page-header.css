@@ -20,7 +20,16 @@
 }
 
 .page-header__lang {
-  margin-left: 31px;
+  margin: 0 30px;
+}
+
+.page-header__theme-toggle {
+  padding: 0;
+  
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
 }
 
 @media (max-width: 800px) {
@@ -28,8 +37,8 @@
     overflow-x: hidden;
   }
 
-  .page-header__lang {
-    margin-right: 75px;
+  .page-header__theme-toggle {
+    margin-right: 80px;
   }
 }
 
@@ -37,5 +46,15 @@
   .page-header {
     background-image: url('../assets/img/header-bg-tablet.jpg');
     background-position: right 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .page-header__lang {
+    margin: 0 15px;
+  }
+
+  .page-header__theme-toggle {
+    margin-right: 70px;
   }
 }

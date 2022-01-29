@@ -15,6 +15,15 @@
   background-color: black;
 }
 
+
+.page__body.light-theme {
+  background-color: white;
+}
+
+.page__content.light-theme {
+  color: black;
+}
+
 .page__title {
   margin: 0 0 10px 0;
   

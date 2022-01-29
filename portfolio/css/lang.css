@@ -8,7 +8,7 @@
 }
 
 .lang__input:hover + .lang__label {
-  opacity: 0.7;
+  color: var(--gold);
 }
 
 .lang__input:focus + .lang__label {
@@ -30,5 +30,11 @@
 @media (max-width: 800px) {
   .lang__slash {
     margin: 0 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .lang__slash {
+    margin: 0 2px;
   }
 }

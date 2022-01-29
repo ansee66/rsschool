@@ -16,6 +16,19 @@
 	list-style: none;
 }
 
+.portfolio__button-item.light-theme .button {
+	color: white;
+}
+
+.portfolio__button-item.light-theme .button--transparent {
+	color: black;
+}
+  
+.portfolio__button-item.light-theme .button--transparent:hover {
+	background-color: var(--gold);
+	color: white;
+}
+
 .portfolio__image-list {
 	display: flex;
 	justify-content: center;
