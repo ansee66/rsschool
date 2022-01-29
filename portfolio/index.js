@@ -6,6 +6,11 @@ console.log(
   "22 из 22 - На ширине экрана 768рх и меньше реализовано адаптивное меню"
 );
 
+// переменные для хранения настроек в local storage
+let lang = "en";
+let currentTheme = "dark";
+let nextTheme = "light";
+
 // адаптивное меню
 const nav = document.querySelector(".main-nav");
 const navToggle = document.querySelector(".main-nav__toggle");
@@ -46,21 +51,30 @@ seasons.forEach(function preloadImages(season) {
 });
 
 //  Перевод страницы на ru/en 
-const langButtons = document.querySelector(".lang");
+const langInputs = document.querySelectorAll(".lang__input");
 
-langButtons.addEventListener("click", function getTranslate(event) {
-  if (event.target.classList.contains("lang__label")) {
-    const textItems = document.querySelectorAll("[data-i18]");
-    textItems.forEach(function (textItem) {
-      let text = i18Obj[event.target.htmlFor][textItem.dataset.i18];
-      if (textItem.placeholder) {
-        textItem.placeholder = text;
-      } else {
-        textItem.textContent = text;
-      }
-    })
-  }
+langInputs.forEach(function(item) {
+  item.addEventListener("click", function() {
+    getTranslate(item.id);
+  })
 });
+
+function getTranslate(whatLang) {
+  const textItems = document.querySelectorAll("[data-i18]");
+  textItems.forEach(function (textItem) {
+    let text = i18Obj[whatLang][textItem.dataset.i18];
+    if (textItem.placeholder) {
+      textItem.placeholder = text;
+    } else {
+      textItem.textContent = text;
+    }
+  })
+  langInputs.forEach(function (item) {
+    item.removeAttribute("checked");
+  });
+  document.getElementById(whatLang).checked = true;
+  lang = whatLang;
+};
 
 //  Переключение светлой и тёмной темы
 const themeToggle = document.querySelector(".page-header__theme-toggle");
@@ -73,13 +87,45 @@ const themeArr = [
   ".main-nav__list",
 ];
 
-themeToggle.addEventListener("click", function changeTheme() {
-  if (! (document.querySelector(themeArr[0]).classList.contains("light-theme"))) {
+themeToggle.addEventListener("click", function() {
+  changeTheme(nextTheme);
+ });
+
+function changeTheme(whatTheme) {
+  if (whatTheme === "light") {
     themeToggleIcon.innerHTML = '<use href="assets/svg/sprite.svg#moon"></use>';
+    themeArr.forEach(function (item) {
+      document.querySelectorAll(item).forEach((element) => element.classList.add("light-theme"));
+    })
+    currentTheme = "light";
+    nextTheme = "dark";
   } else {
     themeToggleIcon.innerHTML = '<use href="assets/svg/sprite.svg#sun"></use>';
+    themeArr.forEach(function (item) {
+      document.querySelectorAll(item).forEach((element) => element.classList.remove("light-theme"));
+    })
+    currentTheme = "dark";
+    nextTheme = "light";
   }
-  themeArr.forEach(function (item) {
-    document.querySelectorAll(item).forEach((element) => element.classList.toggle("light-theme"));
-  })
-});
+}
+
+// Сохранение данных в local storage
+function setLocalStorage() {
+  localStorage.setItem("lang", lang);
+  localStorage.setItem("currentTheme", currentTheme);
+}
+window.addEventListener("beforeunload", setLocalStorage);
+
+function getLocalStorage() {
+  if(localStorage.getItem("lang")) {
+    const userLang = localStorage.getItem("lang");
+    getTranslate(userLang);
+  }
+  if(localStorage.getItem("currentTheme")) {
+    let userTheme = localStorage.getItem("currentTheme");
+    if (nextTheme === userTheme) {
+      changeTheme(userTheme);
+    }
+  }
+}
+window.addEventListener("load", getLocalStorage);
