@@ -36,7 +36,7 @@ const portfolioImages = document.querySelectorAll(".portfolio__image-item img");
 portfolioButtonList.addEventListener("click", function changeImage(event) {
   if (event.target.classList.contains("button")) {
     let season = event.target.dataset.season;
-    portfolioImages.forEach((img, index) => img.src = `/assets/img/${season}/${index + 1}.jpg`);
+    portfolioImages.forEach((img, index) => img.src = `./assets/img/${season}/${index + 1}.jpg`);
     portfolioButtons.forEach((button) => button.classList.add("button--transparent"));
     event.target.classList.remove("button--transparent");
   }
