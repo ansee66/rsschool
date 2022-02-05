@@ -140,6 +140,7 @@ const playBtn = player.querySelector(".controls__play-btn");
 const muteBtn = player.querySelector(".controls__mute-btn");
 const ranges = player.querySelectorAll(".controls__range");
 const progress = player.querySelector(".controls__progress");
+const volume = player.querySelector(".controls__volume");
 
 
 function togglePlay() {
@@ -150,9 +151,8 @@ function togglePlay() {
   }
 }
 
-clip.addEventListener("click", togglePlay);
 playBtn.addEventListener("click", togglePlay);
-
+clip.addEventListener("click", togglePlay);
 
 function changePlayBtnIcon() {
   if (clip.paused) {
@@ -166,24 +166,58 @@ clip.addEventListener("play", changePlayBtnIcon);
 clip.addEventListener("pause", changePlayBtnIcon);
 
 
+function toggleMute() {
+  if (clip.muted) {
+    clip.muted = false;
+  } else {
+    clip.muted = true;
+  }
+}
+
+function changeMuteBtnIcon() {
+  if (clip.muted || volume.value == 0) {
+    muteBtn.style.backgroundImage = "url('./assets/svg/mute.svg')";
+  } else {
+    muteBtn.style.backgroundImage = "url('./assets/svg/volume.svg')";
+  }
+}
+
+muteBtn.addEventListener("click", function() {
+  toggleMute();
+  changeMuteBtnIcon();
+});
+
+
+
 // Изменяем цвет инпутов в зависимости от value
 function reflectProgress() {
   const value = this.value;
-  this.style.background = `linear-gradient(to right, #bdae82 0%, #bdae82 ${value}%, #c8c8c8 ${value}%, #c8c8c8 100%)`;
+  this.style.backgroundImage = `linear-gradient(to right, #bdae82 0%, #bdae82 ${value}%, #c8c8c8 ${value}%, #c8c8c8 100%)`;
 }
-
 ranges.forEach((range) => range.addEventListener("input", reflectProgress))
-// clip.addEventListener("input", reflectProgress);
+
 
 
 // Изменяем время видео в зависимости от положения ползунка
-function scrub(x) {
+function changeProgress() {
   // const scrubTime = (x.offsetX / progress.offsetWidth) * clip.duration;
   const value = this.value;
-  const scrubTime = value * 0.01 * clip.duration;
-  clip.currentTime = scrubTime;
+  const newTime = value * 0.01 * clip.duration;
+  clip.currentTime = newTime;
 }
-progress.addEventListener("click", scrub);
+progress.addEventListener("click", changeProgress);
+
+
+// Изменяем громкость в зависимости от положения ползунка
+function changeVolume() {
+  const value = volume.value;
+  clip.volume = value / 100;
+}
+volume.addEventListener("click", function() {
+  console.log(volume.value);
+  changeVolume();
+  changeMuteBtnIcon();
+});
 
 
 

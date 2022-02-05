@@ -27,7 +27,7 @@
 
   cursor: pointer;
 
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 
 .controls__play-btn {
@@ -47,10 +47,10 @@
   height: 10px;
   margin: 0;
 
-  background: linear-gradient( to right, #bdae82 0%, #bdae82 50%, #c8c8c8 50%, #c8c8c8 100% );
+  background-image: linear-gradient( to right, #bdae82 0%, #bdae82 50%, #c8c8c8 50%, #c8c8c8 100% );
   outline: none;
 
-  transition: background 0.5ms ease-in;
+  transition: background-image 0.3ms ease;
   -webkit-appearance: none;
 }
 
