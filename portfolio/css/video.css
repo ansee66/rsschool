@@ -5,6 +5,20 @@
 
 .video__player {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: calc(46% + 60px); */
+  /* max-height: 705px; */
+}
+
+.video__clip {
+  width: 100%;
+  height: auto;
+
+  border: 1px solid #bdae82;
+  border-bottom: 0;
 }
 
 .video__image {

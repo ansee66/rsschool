@@ -1,12 +1,12 @@
 import i18Obj from "./js/translate.js";
 
-console.log(
-  "25 из 25 - Смена изображений в секции portfolio" + "\n" +
-  "25 из 25 - Перевод страницы на два языка" + "\n" +
-  "25 из 25 - Переключение светлой и тёмной темы" + "\n" +
-  "5 из 5 - Дополнительный функционал: выбранный пользователем язык отображения страницы и светлая или тёмная тема сохраняются при перезагрузке страницы" + "\n" +
-  "5 из 5 - Дополнительный функционал: сложные эффекты для кнопок при наведении и/или клике"
-);
+// console.log(
+//   "25 из 25 - Смена изображений в секции portfolio" + "\n" +
+//   "25 из 25 - Перевод страницы на два языка" + "\n" +
+//   "25 из 25 - Переключение светлой и тёмной темы" + "\n" +
+//   "5 из 5 - Дополнительный функционал: выбранный пользователем язык отображения страницы и светлая или тёмная тема сохраняются при перезагрузке страницы" + "\n" +
+//   "5 из 5 - Дополнительный функционал: сложные эффекты для кнопок при наведении и/или клике"
+// );
 
 // переменные для хранения настроек в local storage
 let lang = "en";
@@ -132,3 +132,60 @@ function getLocalStorage() {
   }
 }
 window.addEventListener("load", getLocalStorage);
+
+// Кастомный видеоплеер
+const player = document.querySelector(".video__player");
+const clip = player.querySelector(".video__clip");
+const playBtn = player.querySelector(".controls__play-btn");
+const muteBtn = player.querySelector(".controls__mute-btn");
+const ranges = player.querySelectorAll(".controls__range");
+const progress = player.querySelector(".controls__progress");
+
+
+function togglePlay() {
+  if (clip.paused) {
+    clip.play();
+  } else {
+    clip.pause();
+  }
+}
+
+clip.addEventListener("click", togglePlay);
+playBtn.addEventListener("click", togglePlay);
+
+
+function changePlayBtnIcon() {
+  if (clip.paused) {
+    playBtn.style.backgroundImage = "url('./assets/svg/play.svg')";
+  } else {
+    playBtn.style.backgroundImage = "url('./assets/svg/pause.svg')";
+  }
+}
+
+clip.addEventListener("play", changePlayBtnIcon);
+clip.addEventListener("pause", changePlayBtnIcon);
+
+
+// Изменяем цвет инпутов в зависимости от value
+function reflectProgress() {
+  const value = this.value;
+  this.style.background = `linear-gradient(to right, #bdae82 0%, #bdae82 ${value}%, #c8c8c8 ${value}%, #c8c8c8 100%)`;
+}
+
+ranges.forEach((range) => range.addEventListener("input", reflectProgress))
+// clip.addEventListener("input", reflectProgress);
+
+
+// Изменяем время видео в зависимости от положения ползунка
+function scrub(x) {
+  // const scrubTime = (x.offsetX / progress.offsetWidth) * clip.duration;
+  const value = this.value;
+  const scrubTime = value * 0.01 * clip.duration;
+  clip.currentTime = scrubTime;
+}
+progress.addEventListener("click", scrub);
+
+
+
+
+

@@ -1,0 +1,74 @@
+.controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  width: calc(100% + 2px);
+  height: 60px;
+  padding: 0 20px;
+  background-color: #000000;
+  border: 1px solid #bdae82;
+  border-top: 0;
+}
+
+.controls__play-btn,
+.controls__mute-btn {
+  box-sizing: border-box;
+  width: 40px;
+  height: 36px;
+
+  font-size: 0;
+
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+
+  cursor: pointer;
+
+  transition: all 0.5s ease;
+}
+
+.controls__play-btn {
+  background-image: url("../assets/svg/play.svg");
+}
+
+.controls__mute-btn {
+  background-image: url("../assets/svg/volume.svg");
+}
+
+.controls__play-btn:hover,
+.controls__mute-btn:hover {
+  filter: invert(26%) sepia(42%) saturate(251%) hue-rotate(7deg) brightness(91%) contrast(85%);
+}
+
+.controls__range {
+  height: 10px;
+  margin: 0;
+
+  background: linear-gradient( to right, #bdae82 0%, #bdae82 50%, #c8c8c8 50%, #c8c8c8 100% );
+  outline: none;
+
+  transition: background 0.5ms ease-in;
+  -webkit-appearance: none;
+}
+
+.controls__progress {
+  width: calc(80% - 160px);
+}
+
+.controls__volume {
+  width: calc(20% - 40px);
+}
+
+.controls__range::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+  
+  background-color: white;
+  border-radius: 50%;
+
+  cursor: ew-resize;
+  -webkit-appearance: none;
+}
