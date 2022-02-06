@@ -120,12 +120,14 @@
         </h2>
         <div class="video__player">
           <img class="video__image" src="assets/img/video-player.jpg" alt="Video" width="1400" height="705">
-          <video class="video__clip" src="assets/video/video.mp4"></video>
-          <div class="video__controls controls">
-            <button class="controls__play-btn">Play</button>
-            <input class="controls__range controls__progress" type="range" value="50" min="0" max="100" step="1">
-            <button class="controls__mute-btn">Mute</button>
-            <input class="controls__range controls__volume" type="range" value="50" min="0" max="100" step="1">
+          <div class="video__player-inner">
+            <video class="video__clip" src="assets/video/video.mp4"></video>
+            <div class="video__controls controls">
+              <button class="controls__play-btn">Play</button>
+              <input class="controls__range controls__progress" type="range" value="50" min="0" max="100" step="1">
+              <button class="controls__mute-btn">Mute</button>
+              <input class="controls__range controls__volume" type="range" value="50" min="0" max="100" step="1">
+            </div>
           </div>
           <button class="video__button">
             <span class="visually-hidden">Play</span>
