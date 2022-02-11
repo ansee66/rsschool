@@ -27,7 +27,7 @@
 
 .page-header {
   grid-area: header;
-  padding: 50px 0;
+  padding: 30px 0;
 
   text-align: center;
 
@@ -43,10 +43,26 @@
   text-align: center;
 }
 
+.lang__label,
+.lang__input {
+  cursor: pointer;
+}
+
+.main-image {
+  max-width: 200px;
+  height: auto;
+  padding: 50px;
+  /* fill: yellow; */
+  /* stroke: black; */
+  background-color: lightgreen;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
 .quote-btn {
   display: block;
   box-sizing: border-box;
-  margin: 20px auto;
+  margin: 30px auto;
   padding: 10px 40px;
 
   font: inherit;
@@ -67,6 +83,15 @@
 
 .quote-text {
   font-size: 26px;
+}
+
+.quote-author {
+  margin-bottom: 30px;
+  
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+  color: #444444;
 }
 
 .page-footer {

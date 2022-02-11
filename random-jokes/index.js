@@ -1,28 +1,52 @@
-const url = "https://type.fit/api/quotes";
+const source = {
+  "en": "https://type.fit/api/quotes",
+  "ru": "./quotes.json",
+};
 const quoteButton = document.querySelector(".quote-btn");
 const placeForQuote = document.querySelector(".quote-text");
+const placeForAuthor = document.querySelector(".quote-author");
+const mainImg = document.querySelector(".main-image");
+const langInputs = document.querySelectorAll(".lang__input");
+let selectedLang = "en";
 
-async function getData() {
-  const res = await fetch(url);
+langInputs.forEach(function(item) {
+  item.onchange = function() {
+    if (item.checked) {
+      selectedLang = String(item.id);
+      getQuote(selectedLang);
+    }
+  }
+});
+
+async function getQuote(lang) {
+  const res = await fetch(source[lang]);
   const data = await res.json();
+  let randomNumber = getRandomNumber(0, 99);
 
-  showData(data[getRandomNumber(0, 1642)].text);
+  showQuote(data[randomNumber].text, data[randomNumber].author);
+
+  changeColor("yellow");
+  setTimeout(function() {
+    changeColor("lightgreen")
+  }, 500);
 }
 
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function showData(dataFromAPI) {
-  placeForQuote.textContent = dataFromAPI;
+function showQuote(quoteFromAPI, authorFromAPI) {
+  placeForQuote.textContent = quoteFromAPI;
+  placeForAuthor.textContent = authorFromAPI;
 }
 
-quoteButton.addEventListener("click", getData);
+function changeColor(color) {
+  mainImg.style.background = color;
+}
 
-// async function getQuotes() {  
-//   const quotes = "data.json";
-//   const res = await fetch(quotes);
-//   const data = await res.json(); 
-//   console.log(data);
-// }
-// getQuotes();
+window.addEventListener("load", function() {
+  getQuote(selectedLang);
+});
+quoteButton.addEventListener("click", function() {
+  getQuote(selectedLang);
+});

@@ -8,23 +8,28 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="assets/favicon1.ico">
   <title>Random quote</title>
 </head>
 <body class="page-body">
   <header class="page-header">
     <div class="container">
-      <label for="en">EN</label>
-      <input class="lang__input" type="radio" id="en" name="lang" value="en-lang">
-      <label for="ru">RU</label>
-      <input class="lang__input" type="radio" id="ru" name="lang" value="ru-lang">
+      <label class="lang__label" for="en">EN
+        <input class="lang__input" type="radio" id="en" name="lang" value="en-lang" checked>
+      </label>
+      <label class="lang__label" for="ru">RU
+        <input class="lang__input" type="radio" id="ru" name="lang" value="ru-lang">
+      </label>
     </div>
   </header>
   <main class="page-main">
     <div class="page-main__inner container">
-      <img class="main-image" src="https://imgholder.ru/600x250/" alt="Random quote">
-      <button class="quote-btn">Make me Laugh</button>
-      <p class="quote-text">Here will be quote</p>
+      <svg class="main-image" width="200" height="200">
+        <use href="assets/img/sprite.svg#light"></use>
+      </svg>
+      <button class="quote-btn">Show New Quote</button>
+      <p class="quote-text"></p>
+      <p class="quote-author"></p>
     </div>
   </main>
   <footer class="page-footer">
