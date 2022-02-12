@@ -5,7 +5,7 @@ const source = {
 const quoteButton = document.querySelector(".quote-btn");
 const placeForQuote = document.querySelector(".quote-text");
 const placeForAuthor = document.querySelector(".quote-author");
-const main = document.querySelector(".page-main");
+const mainBg = document.querySelector(".page-main__bg");
 const langButtons = document.querySelectorAll(".lang__input");
 let selectedLang = "en";
 
@@ -14,6 +14,8 @@ langButtons.forEach(function(item) {
     if (item.checked) {
       selectedLang = String(item.id);
       getQuote(selectedLang);
+      startAnimation();
+      setTimeout(stopAnimation, 2000);
     }
   }
 });
@@ -24,9 +26,6 @@ async function getQuote(lang) {
   let randomNumber = getRandomNumber(0, 99);
 
   showQuote(data[randomNumber].text, data[randomNumber].author);
-
-  startAnimation();
-  setTimeout(stopAnimation, 2000);
 }
 
 function getRandomNumber(min, max) {
@@ -39,11 +38,11 @@ function showQuote(quoteFromAPI, authorFromAPI) {
 }
 
 function startAnimation() {
-  main.style.animation = "neon-color 2s linear infinite";
+  mainBg.style.animation = "neon-color 2s linear infinite";
 }
 
 function stopAnimation() {
-  main.style.animation = "none";
+  mainBg.style.animation = "none";
 }
 
 window.addEventListener("load", function() {
@@ -51,4 +50,6 @@ window.addEventListener("load", function() {
 });
 quoteButton.addEventListener("click", function() {
   getQuote(selectedLang);
+  startAnimation();
+  setTimeout(stopAnimation, 2000);
 });
