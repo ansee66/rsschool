@@ -1,3 +1,16 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .page-body {
   display: grid;
   grid-template-areas: 
@@ -16,7 +29,9 @@
   font-family: "Roboto Mono", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 20px;
+
+  color: white;
 }
 
 .container {
@@ -26,37 +41,54 @@
 }
 
 .page-header {
+  position: relative;
   grid-area: header;
-  padding: 30px 0;
+  padding: 40px 0;
 
   text-align: center;
 
-  background-color: lightcyan;
+  z-index: 2;
+}
+
+.lang__label {
+  display: inline-block;
+  width: 60px;
+  height: 40px;
+
+  font: inherit;
+  line-height: 40px;
+
+  background-color: black;
+  box-shadow: 0 0 8px 3px rgba(265, 265, 265, 1);
+  
+  border-radius: 10px;
+
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.lang__label:hover {
+  color: black;
+  background-color: white;
+  box-shadow: 0 0 8px 3px rgba(0, 0, 0, 1);
 }
 
 .page-main {
   grid-area: main;
-  background-color: lightcyan;
+  display: flex;
+  align-items: flex-end;
+  margin-top: -110px;
+  padding-top: 110px;
+  padding-bottom: 70px;
+
+  background-image: url(assets/img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .page-main__inner {
   text-align: center;
-}
-
-.lang__label,
-.lang__input {
-  cursor: pointer;
-}
-
-.main-image {
-  max-width: 200px;
-  height: auto;
-  padding: 50px;
-  /* fill: yellow; */
-  /* stroke: black; */
-  background-color: lightgreen;
-  border-radius: 50%;
-  transition: all 0.5s ease;
 }
 
 .quote-btn {
@@ -68,7 +100,9 @@
   font: inherit;
   font-weight: 700;
 
-  background-color: yellowgreen;
+  color: black;
+  background-color: white;
+  box-shadow: 0 0 8px 3px rgba(0, 0, 0, 1);
   border: none;
   border-radius: 10px;
 
@@ -77,8 +111,17 @@
 }
 
 .quote-btn:hover {
-  background-color: greenyellow;
-  box-shadow: 0 0 8px 3px rgba(180, 180, 180, 1);
+  color: white;
+  background-color: black;
+  box-shadow: 0 0 8px 3px rgba(265, 265, 265, 1);
+}
+
+.quote-block {
+  padding: 5px 30px;
+  background-color: black;
+  border-radius: 20px;
+  outline: 2px solid #c9c2b9; 
+  outline-offset: -10px;
 }
 
 .quote-text {
@@ -88,10 +131,9 @@
 .quote-author {
   margin-bottom: 30px;
   
-  font-size: 20px;
   font-weight: 700;
   font-style: italic;
-  color: #444444;
+  color: #c9c2b9;
 }
 
 .page-footer {
@@ -118,4 +160,13 @@
 
 .page-footer__inner a:hover {
   opacity: 0.5;
+}
+
+@keyframes neon-color {
+  0%, 100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(360deg);
+  }
 }

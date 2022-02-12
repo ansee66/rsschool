@@ -5,11 +5,11 @@ const source = {
 const quoteButton = document.querySelector(".quote-btn");
 const placeForQuote = document.querySelector(".quote-text");
 const placeForAuthor = document.querySelector(".quote-author");
-const mainImg = document.querySelector(".main-image");
-const langInputs = document.querySelectorAll(".lang__input");
+const main = document.querySelector(".page-main");
+const langButtons = document.querySelectorAll(".lang__input");
 let selectedLang = "en";
 
-langInputs.forEach(function(item) {
+langButtons.forEach(function(item) {
   item.onchange = function() {
     if (item.checked) {
       selectedLang = String(item.id);
@@ -25,10 +25,8 @@ async function getQuote(lang) {
 
   showQuote(data[randomNumber].text, data[randomNumber].author);
 
-  changeColor("yellow");
-  setTimeout(function() {
-    changeColor("lightgreen")
-  }, 500);
+  startAnimation();
+  setTimeout(stopAnimation, 2000);
 }
 
 function getRandomNumber(min, max) {
@@ -40,8 +38,12 @@ function showQuote(quoteFromAPI, authorFromAPI) {
   placeForAuthor.textContent = authorFromAPI;
 }
 
-function changeColor(color) {
-  mainImg.style.background = color;
+function startAnimation() {
+  main.style.animation = "neon-color 2s linear infinite";
+}
+
+function stopAnimation() {
+  main.style.animation = "none";
 }
 
 window.addEventListener("load", function() {

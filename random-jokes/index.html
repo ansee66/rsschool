@@ -15,21 +15,20 @@
   <header class="page-header">
     <div class="container">
       <label class="lang__label" for="en">EN
-        <input class="lang__input" type="radio" id="en" name="lang" value="en-lang" checked>
+        <input class="visually-hidden lang__input" type="radio" id="en" name="lang" value="en-lang" checked>
       </label>
       <label class="lang__label" for="ru">RU
-        <input class="lang__input" type="radio" id="ru" name="lang" value="ru-lang">
+        <input class="visually-hidden lang__input" type="radio" id="ru" name="lang" value="ru-lang">
       </label>
     </div>
   </header>
   <main class="page-main">
     <div class="page-main__inner container">
-      <svg class="main-image" width="200" height="200">
-        <use href="assets/img/sprite.svg#light"></use>
-      </svg>
       <button class="quote-btn">Show New Quote</button>
-      <p class="quote-text"></p>
-      <p class="quote-author"></p>
+      <div class="quote-block">
+        <p class="quote-text"></p>
+        <p class="quote-author"></p>
+      </div>
     </div>
   </main>
   <footer class="page-footer">
