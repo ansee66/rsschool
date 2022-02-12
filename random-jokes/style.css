@@ -100,6 +100,7 @@
 .page-main__inner {
   grid-area: content;
   align-self: end;
+  padding-top: 120px;
   padding-bottom: 70px;
 
   text-align: center;
