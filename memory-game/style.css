@@ -31,7 +31,7 @@
   font-weight: 400;
   font-size: 20px;
 
-  color: white;
+  color: black;
 }
 
 .container {
@@ -41,20 +41,50 @@
 }
 
 .page-header {
-  position: relative;
   grid-area: header;
-  padding: 40px 0;
+  padding: 40px 0 20px 0;
 
   text-align: center;
+}
 
-  z-index: 2;
+.page-header__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.button {
+  box-sizing: border-box;
+
+  font: inherit;
+
+  color: white;
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.button:hover {
+  filter: saturate(300%);
+}
+
+.page-header__button svg {
+  fill: #6F49AA;
+}
+
+.page-header__button {
+  width: 60px;
+  height: 60px;
 }
 
 .page-main {
   grid-area: main;
+  padding-bottom: 30px;
 
   background: linear-gradient(to top, #C5B5FF, #ffffff);
-  /* background-color: #C5B5FF; */
 }
 
 .memory-game {
@@ -71,14 +101,14 @@
 .memory-card {
   position: relative;
   box-sizing: border-box;
-  width: calc(16.66% - 10px);
-  height: calc(33.33% - 10px);
+  width: calc((100% / 6) - 10px);
+  height: calc((100% / 3) - 10px);
   margin: 5px;
 
   cursor: pointer;
   transform: scale(1);
   transform-style: preserve-3d;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
 }
 
 .memory-card:active {
@@ -114,6 +144,8 @@
 
 .page-footer {
   grid-area: footer;
+
+  color: white;
   background-color: black;
 }
 
@@ -136,4 +168,61 @@
 
 .page-footer__inner a:hover {
   opacity: 0.5;
+}
+
+.popup {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px;
+
+  text-align: center;
+
+  background-color: #C5B5FF;
+
+  overflow-y: auto;
+
+  transition: all 0.5s ease;
+
+  visibility: hidden;
+  opacity: 0;
+}
+
+.popup.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup__inner p {
+  margin: 10px 0;
+}
+
+.popup__button {
+  width: 250px;
+  margin: 20px;
+  padding: 10px;
+
+  background-color: #6F49AA;
+  border-radius: 15px;
+}
+
+.button__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cancel-button {
+  background-color: #900020;
 }

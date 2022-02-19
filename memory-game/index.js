@@ -1,9 +1,20 @@
 const cards = document.querySelectorAll(".memory-card");
+const infoMoves = document.querySelector(".game-info__moves");
+const popupMoves = document.querySelector(".popup__moves");
+const popups = document.querySelectorAll(".popup");
+const popupEndGame = document.querySelector(".popup--end-game");
+const popupRestartGame = document.querySelector(".popup--restart-game");
+const startButtons = document.querySelectorAll(".start-button");
+const restartButton = document.querySelector(".page-header__button");
+const cancelButton = document.querySelector(".cancel-button");
+
 let hasTurnedCard = false;
 let firstCard;
 let secondCard;
 let isLockBoard = false;
 let countMoves = 0;
+let wholeCountCardPairs = 9;
+let countOpenedCardPairs = 0;
 
 // переворачиваем карточки
 function turnCard() {
@@ -23,9 +34,9 @@ function turnCard() {
     firstCard = this;
   } else {
     secondCard = this;
-    checkForMatch();
     countMoves++;
-    console.log(countMoves);
+    infoMoves.innerHTML = countMoves;
+    checkForMatch();
   }
 }
 
@@ -35,6 +46,8 @@ cards.forEach(card => card.addEventListener("click", turnCard));
 function checkForMatch() {
   if (firstCard.dataset.meaning === secondCard.dataset.meaning) {
     disableCards();
+    countOpenedCardPairs++;
+    checkEndGame();
   } else {
     unturnCards();
   }
@@ -71,3 +84,37 @@ function shuffleCards() {
   });
 }
 shuffleCards();
+
+// проверяем, завершилась ли игра
+function checkEndGame() {
+  if (countOpenedCardPairs === wholeCountCardPairs) {
+    popupEndGame.classList.add("show");
+    popupMoves.innerHTML = countMoves;
+  }
+}
+
+startButtons.forEach(button => button.addEventListener("click", startNewGame));
+
+restartButton.addEventListener("click", function() {
+  popupRestartGame.classList.add("show");
+})
+
+cancelButton.addEventListener("click", function() {
+  popupRestartGame.classList.remove("show");
+})
+
+// запускаем новую игру
+function startNewGame() {
+  cards.forEach(card => {
+    card.classList.remove("turn");
+    card.addEventListener("click", turnCard);
+  });
+  setTimeout(() => {
+    shuffleCards();
+  }, 400);
+  popups.forEach(popup => popup.classList.remove("show"));
+  countMoves = 0;
+  infoMoves.innerHTML = countMoves;
+  countOpenedCardPairs = 0;
+  resetBoard();
+}
