@@ -1,0 +1,139 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+  
+.page-body {
+  display: grid;
+  grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 
+    min-content
+    1fr
+    min-content;
+  
+  min-height: 100vh;
+  margin: 0;
+
+  font-family: "Roboto Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+
+  color: white;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page-header {
+  position: relative;
+  grid-area: header;
+  padding: 40px 0;
+
+  text-align: center;
+
+  z-index: 2;
+}
+
+.page-main {
+  grid-area: main;
+
+  background: linear-gradient(to top, #C5B5FF, #ffffff);
+  /* background-color: #C5B5FF; */
+}
+
+.memory-game {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 700px;
+  height: 350px;
+  margin: auto;
+
+  perspective: 5000px;
+}
+
+.memory-card {
+  position: relative;
+  box-sizing: border-box;
+  width: calc(16.66% - 10px);
+  height: calc(33.33% - 10px);
+  margin: 5px;
+
+  cursor: pointer;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.memory-card:active {
+  transform: scale(0.95);
+  transition: transform 0.2s ease;
+}
+
+.memory-card.turn {
+  transform: rotateY(180deg);
+}
+
+.memory-card__front-face,
+.memory-card__back-face {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+
+  border: 5px solid #6F49AA;
+  border-radius: 15px;
+  backface-visibility: hidden;
+}
+
+.memory-card__back-face {
+  background-color: #C5B5FF;
+}
+
+.memory-card__front-face {
+  background-color: white;
+  transform: rotateY(180deg);
+}
+
+.page-footer {
+  grid-area: footer;
+  background-color: black;
+}
+
+.page-footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  min-height: 100px;
+
+  color: white;
+}
+
+.page-footer__inner a {
+  text-decoration: none;
+  color: white;
+
+  transition: all 0.5s ease;
+}
+
+.page-footer__inner a:hover {
+  opacity: 0.5;
+}
