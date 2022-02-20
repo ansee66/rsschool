@@ -19,7 +19,7 @@ let isLockBoard = false;
 let countMoves = 0;
 let wholeCountCardPairs = 9;
 let countOpenedCardPairs = 0;
-let results = [];
+let results = isStorage ? localStorage.getItem("results").split(",") : [];
 
 // переворачиваем карточки
 function turnCard() {
@@ -95,7 +95,10 @@ function checkEndGame() {
   if (countOpenedCardPairs === wholeCountCardPairs) {
     popupEndGame.classList.add("show");
     popupMoves.innerHTML = countMoves;
-    results.unshift(countMoves);
+    if (results.length >= 10) {
+      results.pop();
+    }
+    results.unshift(String(countMoves));
     setLocalStorage();
   }
 }
@@ -142,6 +145,7 @@ function fillResults() {
 }
 
 resultsButton.addEventListener("click", function() {
+  console.log(results);
   fillResults();
   popupResults.classList.add("show");
 })

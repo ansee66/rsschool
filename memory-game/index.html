@@ -14,19 +14,22 @@
 <body class="page-body">
   <header class="page-header">
     <div class="container page-header__inner">
-      <div class="game-info"><span class="game-info__moves">0</span> moves</div>
-      <button class="restart-button button" title="Start new game">
-        <span class="visually-hidden">Start new game</span>
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <path d="M48.775 95C24.025 95 4 74.75 4 50C4 25.25 24.025 5 48.775 5C67.225 5 84.1 16.7 90.625 34.025L82.3 37.175C77.125 23.45 63.625 14 48.775 14C28.975 14 13 30.2 13 50C13 69.8 28.975 86 48.775 86C63.4 86 76.45 77.225 82.075 63.5L90.4 66.875C83.425 83.975 67.225 95 48.775 95Z"/>
-          <path d="M96.2189 20.7662L89.4689 43.2662L69.2189 34.9412L96.2189 20.7662Z"/>
-        </svg>
-      </button>
-      <button class="results-button button">Results</button>
+      
     </div>
   </header>
   <main class="page-main">
-    <div class="container">
+    <div class="page-main__inner container">
+      <section class="game-info">
+        <div><span class="game-info__moves">0</span> moves</div>
+        <button class="restart-button button" title="Start new game">
+          <span class="visually-hidden">Start new game</span>
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M48.775 95C24.025 95 4 74.75 4 50C4 25.25 24.025 5 48.775 5C67.225 5 84.1 16.7 90.625 34.025L82.3 37.175C77.125 23.45 63.625 14 48.775 14C28.975 14 13 30.2 13 50C13 69.8 28.975 86 48.775 86C63.4 86 76.45 77.225 82.075 63.5L90.4 66.875C83.425 83.975 67.225 95 48.775 95Z"/>
+            <path d="M96.2189 20.7662L89.4689 43.2662L69.2189 34.9412L96.2189 20.7662Z"/>
+          </svg>
+        </button>
+        <button class="results-button button">Results</button>
+      </section>
       <section class="memory-game">
         <div class="memory-card" data-meaning="bear">
           <img class="memory-card__front-face" src="assets/img/bear.png" width="60" height="60" alt="React">

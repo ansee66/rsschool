@@ -14,12 +14,10 @@
 .page-body {
   display: grid;
   grid-template-areas: 
-    "header"
     "main"
     "footer";
   grid-template-columns: 1fr;
   grid-template-rows: 
-    min-content
     1fr
     min-content;
   
@@ -40,18 +38,23 @@
   padding: 0 20px;
 }
 
-.page-header {
-  grid-area: header;
-  padding: 40px 0 20px 0;
+.page-main {
+  grid-area: main;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
 
-  text-align: center;
+  background: linear-gradient(to top, #C5B5FF, #ffffff);
 }
 
-.page-header__inner {
+.game-info {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
+
+  margin-bottom: 10px;
 }
 
 .button {
@@ -88,15 +91,9 @@
   border-radius: 15px;
 }
 
-.page-main {
-  grid-area: main;
-  padding-bottom: 30px;
-
-  background: linear-gradient(to top, #C5B5FF, #ffffff);
-}
-
 .memory-game {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 
   width: 700px;
@@ -233,4 +230,43 @@
 
 .cancel-button {
   background-color: #900020;
+}
+
+@media (max-width: 767px) {
+  .page-body {
+    font-size: 16px;
+  }
+
+  .page-main__inner {
+    flex-grow: 1;
+  }
+
+  .memory-game {
+    width: 100%;
+  }
+
+  .memory-card {
+    width: calc((100% / 6) - 10px);
+    height: calc((100% / 3) - 10px);
+  }
+}
+
+@media (max-width: 599px) {
+  .game-info {
+    gap: 15px;
+  }
+
+  .memory-game {
+    height: auto;
+  }
+
+  .memory-card {
+    width: 83px;
+    height: 83px;
+  }
+
+  .memory-card__front-face, 
+  .memory-card__back-face {
+    padding: 10px;
+  }
 }
