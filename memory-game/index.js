@@ -22,7 +22,7 @@ let isLockBoard = false;
 let countMoves = 0;
 let wholeCountCardPairs = 9;
 let countOpenedCardPairs = 0;
-let results = isStorage ? localStorage.getItem("results").split(",") : [];
+let results = (isStorage && localStorage.getItem("results")) ? localStorage.getItem("results").split(",") : [];
 
 // переворачиваем карточки
 function turnCard() {
@@ -139,16 +139,17 @@ function setLocalStorage() {
 
 // выводим данные в таблицу результатов
 function fillResults() {
-  if (isStorage && localStorage.getItem("results")) {
-    resultsCells.forEach(function(cell, i) {
+  resultsCells.forEach(function(cell, i) {
+    if (isStorage && localStorage.getItem("results")) {
       let resultsArr = localStorage.getItem("results").split(",");
       cell.innerHTML = resultsArr[i] ?? 0;
-    });
+    } else {
+      cell.innerHTML = 0;
+    }
   }
-}
+)}
 
 resultsButton.addEventListener("click", function() {
-  console.log(results);
   fillResults();
   popupResults.classList.add("show");
 })
