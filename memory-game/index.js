@@ -4,9 +4,13 @@ const popupMoves = document.querySelector(".popup__moves");
 const popups = document.querySelectorAll(".popup");
 const popupEndGame = document.querySelector(".popup--end-game");
 const popupRestartGame = document.querySelector(".popup--restart-game");
+const popupResults = document.querySelector(".popup--results");
 const startButtons = document.querySelectorAll(".start-button");
-const restartButton = document.querySelector(".page-header__button");
-const cancelButton = document.querySelector(".cancel-button");
+const restartButton = document.querySelector(".restart-button");
+const cancelButtons = document.querySelectorAll(".cancel-button");
+const resultsButton = document.querySelector(".results-button");
+const resultsCells = document.querySelectorAll(".results-table__cells");
+const isStorage = typeof localStorage !== "undefined";
 
 let hasTurnedCard = false;
 let firstCard;
@@ -15,6 +19,7 @@ let isLockBoard = false;
 let countMoves = 0;
 let wholeCountCardPairs = 9;
 let countOpenedCardPairs = 0;
+let results = [];
 
 // переворачиваем карточки
 function turnCard() {
@@ -85,11 +90,13 @@ function shuffleCards() {
 }
 shuffleCards();
 
-// проверяем, завершилась ли игра
+// проверяем на завершение игры
 function checkEndGame() {
   if (countOpenedCardPairs === wholeCountCardPairs) {
     popupEndGame.classList.add("show");
     popupMoves.innerHTML = countMoves;
+    results.unshift(countMoves);
+    setLocalStorage();
   }
 }
 
@@ -99,9 +106,9 @@ restartButton.addEventListener("click", function() {
   popupRestartGame.classList.add("show");
 })
 
-cancelButton.addEventListener("click", function() {
-  popupRestartGame.classList.remove("show");
-})
+cancelButtons.forEach(button => button.addEventListener("click", function() {
+  popups.forEach(popup => popup.classList.remove("show"));
+}))
 
 // запускаем новую игру
 function startNewGame() {
@@ -118,3 +125,23 @@ function startNewGame() {
   countOpenedCardPairs = 0;
   resetBoard();
 }
+
+// сохраняем данные в local storage
+function setLocalStorage() {
+  localStorage.setItem("results", results);
+}
+
+// выводим данные в таблицу результатов
+function fillResults() {
+  if (isStorage && localStorage.getItem("results")) {
+    resultsCells.forEach(function(cell, i) {
+      let resultsArr = localStorage.getItem("results").split(",");
+      cell.innerHTML = resultsArr[i] ?? 0;
+    });
+  }
+}
+
+resultsButton.addEventListener("click", function() {
+  fillResults();
+  popupResults.classList.add("show");
+})

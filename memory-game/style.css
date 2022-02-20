@@ -71,13 +71,21 @@
   filter: saturate(300%);
 }
 
-.page-header__button svg {
+.restart-button svg {
   fill: #6F49AA;
 }
 
-.page-header__button {
+.restart-button {
   width: 60px;
   height: 60px;
+}
+
+.results-button {
+  width: 120px;
+  padding: 10px;
+
+  background-color: #6F49AA;
+  border-radius: 15px;
 }
 
 .page-main {
