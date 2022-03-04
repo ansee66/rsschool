@@ -1,0 +1,81 @@
+.skills {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.skills__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 36px 40px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.skills__item {
+  max-width: 320px;
+  min-height: 240px;
+  padding: 80px 20px 10px 20px;
+  box-sizing: border-box;
+
+  text-align: center;
+
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.skills__item:nth-child(1) {
+  background-image: url('../assets/svg/camera.svg');
+  background-size: 62px 50px;
+}
+
+.skills__item:nth-child(2) {
+  background-image: url('../assets/svg/video.svg');
+  background-size: 60px 50px;
+}
+
+.skills__item:nth-child(3) {
+  background-image: url('../assets/svg/image.svg');
+  background-size: 66px 50px;
+}
+
+.skills__item:nth-child(4) {
+  background-image: url('../assets/svg/mic.svg');
+  background-size: 32px 50px;
+}
+
+.skills__title {
+  margin: 20px 0;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.skills__description {
+  margin: 10px 0 0 0;
+}
+
+@media (max-width: 800px) {
+  .skills .section-title {
+    margin-bottom: 65px;
+  }
+  
+  .skills__list {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .skills__item {
+    max-width: 300px;
+    min-height: 224px;
+    padding: 60px 10px 10px 10px;
+  }
+
+  .skills__description {
+    line-height: 22px;
+  }
+}

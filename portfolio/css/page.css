@@ -1,0 +1,40 @@
+.page {
+  scroll-behavior: smooth;
+}
+
+.page__body {
+  height: 100%;
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 2;
+
+  color: white;
+  background-color: black;
+}
+
+
+.page__body.light-theme {
+  background-color: white;
+}
+
+.page__content.light-theme {
+  color: black;
+}
+
+.page__title {
+  margin: 0 0 10px 0;
+  
+  font-family: "Merriweather", serif;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+@media (max-width: 800px) {
+  .page__title {
+    font-size: 32px;
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,52 @@
+.section-title {
+  margin: 0 auto 60px auto;
+
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 40px;
+
+  color: var(--gold);
+}
+
+.section-title.light-theme {
+  color: black;
+}
+
+.section-title--lines {
+  width: 50%;
+
+  text-align: center;
+
+  background-image: linear-gradient(var(--gold), var(--gold));
+  background-size: 100% 2px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section-title--lines.light-theme {
+  background-image: linear-gradient(#000, #000);
+}
+
+.section-title span {
+  padding: 0 20px;
+ 
+  background-color: black;
+}
+
+.section-title.light-theme span {
+  background-color: white;
+}
+
+@media (max-width: 800px) {
+  .section-title {
+    margin-bottom: 70px;
+
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .section-title--lines {
+    width: 100%;
+    max-width: 364px;
+  }
+}
