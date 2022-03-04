@@ -5,11 +5,42 @@
 
 .video__player {
   position: relative;
+  display: grid;
+  grid-template-areas: "video-block";
+
+  height: calc(46% + 60px); 
+  max-height: 705px;
 }
 
 .video__image {
+  grid-area: video-block;
   display: block;
+
+  height: 100%;
   margin: 0 auto;
+
+  z-index: 2;
+  cursor: pointer; 
+  transition: 1s;
+}
+
+.video__player-inner {
+  grid-area: video-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  max-height: 100%;
+}
+
+.video__clip {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+
+  border: 1px solid #bdae82;
+  border-bottom: 0;
 }
 
 .video__button {
@@ -22,11 +53,11 @@
   margin-top: -65px;
   padding: 0;
 
+  background-color: transparent;
   border: none;
 
   cursor: pointer;
-
-  background-color: transparent;
+  z-index: 3;
 }
 
 @media (max-width: 800px) {
