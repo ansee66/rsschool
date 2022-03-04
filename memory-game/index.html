@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <title>Memory Game</title>
+</head>
+<body class="page-body">
+  <header class="page-header">
+    <div class="container page-header__inner">
+      
+    </div>
+  </header>
+  <main class="page-main">
+    <div class="page-main__inner container">
+      <section class="game-info">
+        <div><span class="game-info__moves">0</span> moves</div>
+        <button class="restart-button button" title="Start new game">
+          <span class="visually-hidden">Start new game</span>
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M48.775 95C24.025 95 4 74.75 4 50C4 25.25 24.025 5 48.775 5C67.225 5 84.1 16.7 90.625 34.025L82.3 37.175C77.125 23.45 63.625 14 48.775 14C28.975 14 13 30.2 13 50C13 69.8 28.975 86 48.775 86C63.4 86 76.45 77.225 82.075 63.5L90.4 66.875C83.425 83.975 67.225 95 48.775 95Z"/>
+            <path d="M96.2189 20.7662L89.4689 43.2662L69.2189 34.9412L96.2189 20.7662Z"/>
+          </svg>
+        </button>
+        <button class="results-button button">Results</button>
+      </section>
+      <section class="memory-game">
+        <div class="memory-card" data-meaning="bear">
+          <img class="memory-card__front-face" src="assets/img/bear.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+        <div class="memory-card" data-meaning="bear">
+          <img class="memory-card__front-face" src="assets/img/bear.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+
+        <div class="memory-card" data-meaning="bee">
+          <img class="memory-card__front-face" src="assets/img/bee.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+        <div class="memory-card" data-meaning="bee">
+          <img class="memory-card__front-face" src="assets/img/bee.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+
+        <div class="memory-card" data-meaning="crab">
+          <img class="memory-card__front-face" src="assets/img/crab.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+        <div class="memory-card" data-meaning="crab">
+          <img class="memory-card__front-face" src="assets/img/crab.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+
+        <div class="memory-card" data-meaning="elephant">
+          <img class="memory-card__front-face" src="assets/img/elephant.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+        <div class="memory-card" data-meaning="elephant">
+          <img class="memory-card__front-face" src="assets/img/elephant.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+
+        <div class="memory-card" data-meaning="fish">
+          <img class="memory-card__front-face" src="assets/img/fish.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+        <div class="memory-card" data-meaning="fish">
+          <img class="memory-card__front-face" src="assets/img/fish.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+
+        <div class="memory-card" data-meaning="frog">
+          <img class="memory-card__front-face" src="assets/img/frog.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+        <div class="memory-card" data-meaning="frog">
+          <img class="memory-card__front-face" src="assets/img/frog.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+
+        <div class="memory-card" data-meaning="penguin">
+          <img class="memory-card__front-face" src="assets/img/penguin.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+        <div class="memory-card" data-meaning="penguin">
+          <img class="memory-card__front-face" src="assets/img/penguin.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+
+        <div class="memory-card" data-meaning="turtle">
+          <img class="memory-card__front-face" src="assets/img/turtle.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+        <div class="memory-card" data-meaning="turtle">
+          <img class="memory-card__front-face" src="assets/img/turtle.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+
+        <div class="memory-card" data-meaning="whale">
+          <img class="memory-card__front-face" src="assets/img/whale.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+        <div class="memory-card" data-meaning="whale">
+          <img class="memory-card__front-face" src="assets/img//whale.png" width="60" height="60" alt="React">
+          <img class="memory-card__back-face" src="assets/img/leaf.png" width="60" height="60" alt="Memory Card">
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="page-footer">
+    <div class="page-footer__inner container">
+      <a href="https://github.com/ansee66">My GitHub</a>
+      <p>2022</p>
+      <a href="https://rs.school/js/"><img src="assets/img/rs_school_js.svg" width="100" height="38" alt="Logo RS School"></a>
+    </div>
+  </footer>
+
+  <div class="popup popup--end-game">
+    <p><b>Congratulations!</b></p>
+    <p>Your result: <span class="popup__moves"></span> moves</p>
+    <button class="button popup__button start-button">Play again</button>
+  </div>
+
+  <div class="popup popup--restart-game">
+    <p><b>Do you want to restart game?</b></p>
+    <p>Your progress will be lost.</p>
+    <div class="button__wrapper">
+      <button class="button popup__button start-button">Yes, restart game</button>
+      <button class="button popup__button cancel-button">No</button>
+    </div>
+  </div>
+
+  <div class="popup popup--results">
+    <p><b>Last results</b></p>
+    <table class="results-table">
+      <tbody>
+        <tr>
+          <td><b>1.</b></td>
+          <td class="results-table__cells"></td>
+        </tr>
+        <tr>
+          <td><b>2.</b></td>
+          <td class="results-table__cells"></td>
+        </tr>
+        <tr>
+          <td><b>3.</b></td>
+          <td class="results-table__cells"></td>
+        </tr>
+        <tr>
+          <td><b>4.</b></td>
+          <td class="results-table__cells"></td>
+        </tr>
+        <tr>
+          <td><b>5.</b></td>
+          <td class="results-table__cells"></td>
+        </tr>
+        <tr>
+          <td><b>6.</b></td>
+          <td class="results-table__cells"></td>
+        </tr>
+        <tr>
+          <td><b>7.</b></td>
+          <td class="results-table__cells"></td>
+        </tr>
+        <tr>
+          <td><b>8.</b></td>
+          <td class="results-table__cells"></td>
+        </tr>
+        <tr>
+          <td><b>9.</b></td>
+          <td class="results-table__cells"></td>
+        </tr>
+        <tr>
+          <td><b>10.</b></td>
+          <td class="results-table__cells"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="button popup__button cancel-button">Close</button>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

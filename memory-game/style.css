@@ -1,0 +1,272 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+  
+.page-body {
+  display: grid;
+  grid-template-areas: 
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 
+    1fr
+    min-content;
+  
+  min-height: 100vh;
+  margin: 0;
+
+  font-family: "Roboto Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+
+  color: black;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page-main {
+  grid-area: main;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+
+  background: linear-gradient(to top, #C5B5FF, #ffffff);
+}
+
+.game-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  margin-bottom: 10px;
+}
+
+.button {
+  box-sizing: border-box;
+
+  font: inherit;
+
+  color: white;
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.button:hover {
+  filter: saturate(300%);
+}
+
+.restart-button svg {
+  fill: #6F49AA;
+}
+
+.restart-button {
+  width: 60px;
+  height: 60px;
+}
+
+.results-button {
+  width: 120px;
+  padding: 10px;
+
+  background-color: #6F49AA;
+  border-radius: 15px;
+}
+
+.memory-game {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  width: 700px;
+  height: 350px;
+  margin: auto;
+
+  perspective: 5000px;
+}
+
+.memory-card {
+  position: relative;
+  box-sizing: border-box;
+  width: calc((100% / 6) - 10px);
+  height: calc((100% / 3) - 10px);
+  margin: 5px;
+
+  cursor: pointer;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+
+.memory-card:active {
+  transform: scale(0.95);
+  transition: transform 0.2s ease;
+}
+
+.memory-card.turn {
+  transform: rotateY(180deg);
+}
+
+.memory-card__front-face,
+.memory-card__back-face {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+
+  border: 5px solid #6F49AA;
+  border-radius: 15px;
+  backface-visibility: hidden;
+}
+
+.memory-card__back-face {
+  background-color: #C5B5FF;
+}
+
+.memory-card__front-face {
+  background-color: white;
+  transform: rotateY(180deg);
+}
+
+.page-footer {
+  grid-area: footer;
+
+  color: white;
+  background-color: black;
+}
+
+.page-footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  min-height: 100px;
+
+  color: white;
+}
+
+.page-footer__inner a {
+  text-decoration: none;
+  color: white;
+
+  transition: all 0.5s ease;
+}
+
+.page-footer__inner a:hover {
+  opacity: 0.5;
+}
+
+.popup {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px;
+
+  text-align: center;
+
+  background-color: #C5B5FF;
+
+  overflow-y: auto;
+
+  transition: all 0.5s ease;
+
+  visibility: hidden;
+  opacity: 0;
+}
+
+.popup.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup__inner p {
+  margin: 10px 0;
+}
+
+.popup__button {
+  width: 250px;
+  margin: 20px;
+  padding: 10px;
+
+  background-color: #6F49AA;
+  border-radius: 15px;
+}
+
+.button__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cancel-button {
+  background-color: #900020;
+}
+
+@media (max-width: 767px) {
+  .page-body {
+    font-size: 16px;
+  }
+
+  .page-main__inner {
+    flex-grow: 1;
+  }
+
+  .memory-game {
+    width: 100%;
+  }
+
+  .memory-card {
+    width: calc((100% / 6) - 10px);
+    height: calc((100% / 3) - 10px);
+  }
+}
+
+@media (max-width: 599px) {
+  .game-info {
+    gap: 15px;
+  }
+
+  .memory-game {
+    height: auto;
+  }
+
+  .memory-card {
+    width: 83px;
+    height: 83px;
+  }
+
+  .memory-card__front-face, 
+  .memory-card__back-face {
+    padding: 10px;
+  }
+}
